@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../styles/New Arrivals.css">
+    <title>Shop</title>
+    <script src="../scripts/nav.js"></script>
+    <link rel="icon" type="image/png" href="C:\Users\Administrator\Desktop\icon.png">
+</head>
+<body>
+    <header>
+        <div class="strap">Sale! Up to 40%</div>
+        <div class="logo">POV
+        <a href="#profile"><i class="bi bi-person"></i></a>
+        <a href="#cart" class="cart-icon"><i class="bi bi-cart3"></i> </a>
+        <a href="#search" class="search-icon"><i class="bi bi-search"></i> </a>
+    </div>
+
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-content">
+            <img src="../images/Angled-Leg-Press-Linear-Bearing-U2056S-4.jpg" alt="">
+            <button>Continue Shopping</button> 
+            <button id="close-cart">Close</button>
+        </div>
+    </div>
+
+    <div class="search-bar" id="search-bar">
+        <input type="text" placeholder="Search...">
+        <button onclick="return validateSearch()">Search</button>
+        <button id="close-search">Close</button>
+    </div>
+
+        <nav class="navigation">
+            <a href="./HOME">HOME</a>
+            <a href="./New Arrivals.html">NEW ARRIVALS</a>
+            <div class="dropdown">
+                <a href="./shop.html">SHOP <i class="fa-solid fa-angle-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="./wieghts.html">Wieghts</a>
+               <a href="./machines.html">Machines</a>
+               <a href="./clothes.html">Clothes</a>
+             <a href="./suplements.html">Suplements</a>
+                <!--  <a href="./.html">FLATS</a>-->
+                </div>
+            </div>
+            <a href="./About">ABOUT</a>
+        </nav>
+    </header>
+    <div class="filter-section">
+        <div class="filter">
+            <h2><i class="fa-solid fa-sliders"></i> Filters</h2><hr>
+        </div>
+        <div class="in-stock">
+            <h2>In Stock Only</h2> 
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <hr>
+        </div>
+        <div class="price-section">
+            <h2>Price</h2>
+           <hr>
+        </div>
+    </div>
+    <div class="content">
+        <div class="product-card">
+            <img src="https://maricals.com/wp-content/uploads/2024/04/Angled-Leg-Press-Linear-Bearing-U2056S-1.jpg" alt="Product Image" class="default-img">
+            <img src="https://maricals.com/wp-content/uploads/2024/04/Angled-Leg-Press-Linear-Bearing-U2056S-4.jpg" alt="Product Hover Image" class="hover-img">
+            <div class="card-body">
+                <h3>leg press machine</h3>
+                <p class="price">9950.00 L.E</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://maricals.com/wp-content/uploads/2024/04/Biceps-Curl-Y970Z-New-1.jpg" alt="Product Image" class="default-img">
+            <img src="https://maricals.com/wp-content/uploads/2024/04/Biceps-Curl-Y970Z-New-3.jpg" alt="Product Hover Image" class="hover-img">
+            <div class="card-body">
+                <h3>Biceps Curl</h3>
+                <p class="price">7750.00 L.E</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://maricals.com/wp-content/uploads/2024/02/Chest-Press-D905Z-1.webp" alt="Product Image" class="default-img">
+            <img src="https://maricals.com/wp-content/uploads/2024/02/Chest-Press-D905Z-2.webp" alt="Product Hover Image" class="hover-img">
+            <div class="card-body">
+                <h3>Bench Press</h3>
+                <p class="price">11200.00 L.E</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://maricals.com/wp-content/uploads/2024/04/Incline-Chest-Press-D915Z-1-g.jpg" alt="Product Image" class="default-img">
+            <img src="https://maricals.com/wp-content/uploads/2024/04/Incline-Chest-Press-D915Z-2-g-150x150.jpg" alt="Product Hover Image" class="hover-img">
+            <div class="card-body">
+                <h3>Incline Bench Press</h3>
+                <p class="price">11750.00 L.E</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://maricals.com/wp-content/uploads/2024/04/Leg-Extension-Y960Z-New-1.jpg" alt="Product Image" class="default-img">
+            <img src="https://maricals.com/wp-content/uploads/2024/04/Leg-Extension-Y960Z-New-3.jpg" alt="Product Hover Image" class="hover-img">
+            <div class="card-body">
+                <h3>Leg Extension</h3>
+                <p class="price">11450.00 L.E</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://maricals.com/wp-content/uploads/2024/04/Pull-Down-D920Z-3-g.jpg" alt="Product Image" class="default-img">
+            <img src="https://maricals.com/wp-content/uploads/2024/04/Pull-Down-D920Z-2-g.jpg" alt="Product Hover Image" class="hover-img">
+            <div class="card-body">
+                <h3>Pull Down</h3>
+                <p class="price">11490.00 L.E</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://maricals.com/wp-content/uploads/2024/04/%E6%9C%AA%E6%A0%87%E9%A2%98-1-7.jpg" alt="Product Image" class="default-img">
+            <img src="https://maricals.com/wp-content/uploads/2024/04/%E6%9C%AA%E6%A0%87%E9%A2%98-1-9.jpg" alt="Product Hover Image" class="hover-img">
+            <div class="card-body">
+                <h3>Balance half ball</h3>
+                <p class="price">1500.00 L.E</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://maricals.com/wp-content/uploads/2024/04/%E6%9C%AA%E6%A0%87%E9%A2%98-1-23.jpg" alt="Product Image" class="default-img">
+            <img src="https://maricals.com/wp-content/uploads/2024/04/%E6%9C%AA%E6%A0%87%E9%A2%98-1-25.jpg" alt="Product Hover Image" class="hover-img">
+            <div class="card-body">
+                <h3>Boxing punching bags</h3>
+                <p class="price">1599.99 L.E</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <a href="./1stShoes.html">
+            <img src="https://maricals.com/wp-content/uploads/2024/03/Rubber-Gym-Flooring-Roll-1.webp" alt="Product Image" class="default-img">
+            <img src="https://maricals.com/wp-content/uploads/2024/03/Rubber-Gym-Flooring-Roll-20.jpg" alt="Product Hover Image" class="hover-img">
+            <div class="card-body">
+                <h3>Rubber Gym Flooring Roll</h3>
+                <p class="price">450.00 L.E</p>
+                <button>Add to Cart</button></a>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <img src="https://maricals.com/wp-content/uploads/2024/02/bf72dd73c2c86d2181dc7ad501dc5ad.png" alt="Product Image" class="default-img">
+            <img src="https://maricals.com/wp-content/uploads/2024/02/f47f9a00c76ec4f093cb9ba277f8662.png" alt="Product Hover Image" class="hover-img">
+            <div class="card-body">
+                <h3>Bent Bench Press Bar</h3>
+                <p class="price">450.00 L.E</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <img src="https://maricals.com/wp-content/uploads/2024/02/%E6%89%8B%E6%8F%A1%E6%9D%86-4.png" alt="Product Image" class="default-img">
+            <img src="https://maricals.com/wp-content/uploads/2024/02/%E6%89%8B%E6%8F%A1%E6%9D%86-2.png" alt="Product Hover Image" class="hover-img">
+            <div class="card-body">
+                <h3>Enhance your workout routine with the versatile Multi-Grip Camber Bar</h3>
+                <p class="price">750.00 L.E</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://maricals.com/wp-content/uploads/2024/04/Olympic-Incline-Bench-U3042-3.jpg" alt="Product Image" class="default-img">
+            <img src="https://maricals.com/wp-content/uploads/2024/04/Olympic-Incline-Bench-U3042-1.jpg" alt="Product Hover Image" class="hover-img">
+            <div class="card-body">
+                <h3>Olympic Incline Bench</h3>
+                <p class="price">1790.00 L.E</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://www.maxmuscleelite.com/web/image/product.product/6533/image_1920/%5B6224009363469%5D%20Muscle%20Add%20Whey%20Add-60Serv.-2100G-Chocolate%20Ice%20Cream?unique=93b6777" alt="Product Image" class="default-img">
+            <img src="https://www.maxmuscleelite.com/web/image/product.image/2566/image_1920/Muscle%20Add%20Whey%20Add-60Serv.-2100G-Chocolate%20Ice%20Cream?unique=1a62609" alt="Product Hover Image" class="hover-img">
+            <div class="card-body">
+                <h3>Muscle Add Whey Add-60Serv.-2100G-Chocolate Ice Cream</h3>
+                <p class="price">2960.00 L.E</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://www.maxmuscleelite.com/web/image/product.product/6065/image_1920/%5B6224009096114%5D%20Organic%20Nation%20100%25%20Casein-30Serv.-900G-Chocolate?unique=aa7a8ff" alt="Product Image" class="default-img">
+            <img src="https://www.maxmuscleelite.com/web/image/product.image/406/image_1920/Organic%20Nation%20Casein-30Serv.-900G-Chocolate?unique=fe0b793" alt="Product Hover Image" class="hover-img">
+            <div class="card-body">
+                <h3>Organic Nation 100% Casein-30Serv.-900G-Chocolate</h3>
+                <p class="price">1500.00 L.E</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://www.maxmuscleelite.com/web/image/product.product/4843/image_1920/%5B6224009328048%5D%20Novogen%20Pharma%20Whey%20Isolate-60Serv.-2Kg-Vanilla%20Ice%20Cream?unique=43ac102" alt="Product Image" class="default-img">
+            <img src="https://www.maxmuscleelite.com/web/image/product.image/4/image_1920/Novogen%20Pharma%20Whey-60Serv.-Vanilla%20supplement%20facts?unique=ef50744" alt="Product Hover Image" class="hover-img">
+            <div class="card-body">
+                <h3>Novogen Pharma Whey Isolate-60Serv.-2Kg-Vanilla Ice Cream</h3>
+                <p class="price">3900.00 L.E</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+        <!-- Add more cards here -->
+    </div>
+
+   <!-- footer -->
+   <div class="footer">
+    <div>
+        <h1>Sign up for new products<br> and personal offers</h1>
+        <form>
+            <input type="email" placeholder="E-mail">
+            <button type="submit">Sign up</button>
+        </form>
+    </div>
+    <div>
+        <h2 style="font-style: bold;">About</h2>
+        <p>عايز البطن شوكلاته<br> والصدر بلاطه<br> يبقي حلك عندنا<br>  !مع شد حيلك</p>    </div>
+    <div>
+        <h2 style="font-style: bold;">Quick Links</h2>
+        <ul>
+            <li><a class="link" href="#">Privacy Policy</a></li>
+            <li><a class="link" href="#">Terms of Service</a></li>
+            <li><a class="link" href="#">Refund & Exchange Policy</a></li>
+        </ul>
+    </div>
+ </div>
+
+</body>
+</html>

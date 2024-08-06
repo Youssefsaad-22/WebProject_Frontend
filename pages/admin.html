@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/admin.css">
+    <script src="../scripts/admin.js"></script>
+    <title>Admin</title>
+</head>
+<body>
+    <div class="crud">
+        <div class="head">
+        <h2>Admin</h2>
+        <p>GYM MANAGEMENT SYSTEM</P>
+        </div>
+        <div class="inputs">
+            <input placeholder="title" type="text" id="title">
+                <div class="price">
+                    <input type="number" id="price" placeholder="price">
+                    <input type="number" id="taxes" placeholder="taxes">
+                    <input type="number" id="ads" placeholder="ads">
+                    <input type="number" id="discount" placeholder="discount">
+                    <small id="total">0000</small>
+                </div>
+                <input placeholder="count" type="number" id="count">
+                <input placeholder="category" type="text" id="category">
+                <input type="file" id="imageUpload" accept="image/*"> 
+               
+               <button id="submit">ADD</button>
+
+        </div>
+
+        <div class="outputs">
+            <div class="searchBlock">
+                <input type="text" id="search" placeholder="Search">
+                <div class="btnSearch">
+                <button id="searchTitle">Search By Title</button>
+                <button id="searchTCategory">Search By Category</button>
+                </div>
+             </div>
+
+
+             <table>
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>taxes</th>
+                    <th>ads</th>
+                    <th>discount</th>
+                    <th>total</th>
+                    <th>category</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </tr>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>leg press machine</td>
+                        <td>9950</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>2100</td>
+                        <td>machines</td>
+                        <td><button id="update">update</button></td>
+                        <td><button id="delete">delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Muscle Add Whey Add-60Serv.-2100G-Chocolate Ice Cream</td>
+                        <td>2960</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>2100</td>
+                        <td>Suplements</td>
+                        <td><button id="update">update</button></td>
+                        <td><button id="delete">delete</button></td>
+                     </tr>
+                     <tr>
+                        <td>3</td>
+                        <td>Olympic Incline Bench</td>
+                        <td>17900</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>2100</td>
+                        <td>machines</td>
+                        <td><button id="update">update</button></td>
+                        <td><button id="delete">delete</button></td>
+                    </tr>
+                </tbody>
+             </table>
+             <div class="btnSearch">
+                <button id="searchTitle">Home Page</button>
+                <button id="searchTCategory">User Management Page</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
