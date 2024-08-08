@@ -269,32 +269,35 @@ header {
   .slider.round:before {
     border-radius: 50%;
   }
+/* Flex container to align product cards horizontally */
+/* Flex container to align product cards horizontally */
 .content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    gap: 10px; /* Spacing between cards */
-    padding: 20px;
-    justify-content: flex-start; /* Align items to the left */
-    align-items: flex-start; /* Align items to the top */
-    margin-left: 500px; /* Shift the entire grid to the right */
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to new lines if needed */
+    gap: 20px; /* Space between product cards */
+    justify-content: space-around; /* Adjust the spacing around items */
 }
+
 .product-card {
-    width: 100%; /* Full width of the grid column */
+    flex: 1 1 300px; /* Flexible basis with minimum width of 300px */
+    max-width: 300px; /* Maximum width for each card */
     border-radius: 10px; /* Uniform border-radius for all cards */
     text-align: center;
     padding: 15px; /* Padding inside the card */
     background-color: white;
     overflow: hidden; /* Ensures content stays within card boundaries */
-}
-.product-card {
+    margin: 10px; /* Space around each card */
     position: relative; /* Needed for absolute positioning of hover image */
+    transition: transform 0.3s; /* Smooth transform transition for hover effect */
 }
+
+.product-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
 .product-card a {
     text-decoration: none; /* Prevent underlining in product card links */
     color: inherit;        /* Keep the text color same as the surrounding text */
-}
-.product-card a:hover {
-    text-decoration: none; /* No underline on hover */
 }
 
 .product-card button {
@@ -306,6 +309,7 @@ header {
     border-radius: 3px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin-top: 10px; /* Space above the button */
 }
 
 .product-card button:hover {
@@ -318,6 +322,7 @@ header {
     width: 100%; /* Ensure images occupy full width of card */
     height: auto;
 }
+
 .product-card .hover-img {
     position: absolute; /* Position hover image over default image */
     top: 0;
@@ -325,75 +330,36 @@ header {
     opacity: 0; /* Initially hidden */
     transition: opacity 0.3s; /* Smooth transition for hover effect */
 }
+
 .product-card:hover .default-img {
     opacity: 0; /* Hide default image on hover */
 }
+
 .product-card:hover .hover-img {
     opacity: 1; /* Show hover image on hover */
 }
-.card img {
-    width: 100%;
-    height: auto;
-}
+
 .card-body {
     padding: 25px;
     font-size: small;
 }
+
 .card-body h3 {
     font-size: 1.2em;
     margin-bottom: 10px;
 }
+
 .card-body p {
     margin-bottom: 10px;
 }
+
 .price {
     text-align: center;
-}
-button {
-    background-color:white;
-    color:black;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-button:hover {
-    background-color: black;
-    color:white;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #b12704; /* Amazon-style price color */
 }
 
-.pagination {
-    text-align: center;  /* Center-aligns the pagination controls */
-    padding: 20px 0;  /* Adds space around pagination */
-}
-
-.page-link {
-    text-decoration: none;  /* Removes underlines from links */
-    color: #000;  /* Sets the text color */
-    padding: 8px 12px;  /* Spacing for links */
-    margin: 0 5px;  /* Space between links */
-    border: 1px solid #ddd;  /* Border styling */
-    border-radius: 5px;  /* Rounds the corners */
-}
-
-.page-link:hover {
-    background-color: #f0f0f0;  /* Hover effect */
-}
-
-.next-page {
-    text-decoration: none;  /* Removes underlines from links */
-    color: #000;  /* Sets the text color */
-    padding: 8px 12px;  /* Spacing for links */
-    margin: 0 10px;  /* Space between links */
-    border: 1px solid #ddd;  /* Border styling */
-    border-radius: 5px;  /* Rounds the corners */
-}
-
-.next-page:hover {
-    background-color: #1c1c1c;  /* Hover effect */
-    color: white;
-}
 
 .footer {
     display: flex;
