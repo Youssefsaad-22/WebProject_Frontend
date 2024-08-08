@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <script src="D:\Web Development\project\js files\signup.js" defer></script>
+    <link rel="stylesheet" href="../styles/signup.css">
+</head>
+<body>
+    <header>
+        <div class="strap">شيك علي الجديد</div>
+        <div class="logo">شد حيلك
+        <a href="D:\Web Development\project\html files\login.html"><i class="bi bi-person"></i></a>
+        <a href="#cart" class="cart-icon"><i class="bi bi-cart3"></i> </a>
+        <a href="#search" class="search-icon"><i class="bi bi-search"></i> </a>
+    </div>
+
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-content">
+            <img src="../images/Angled-Leg-Press-Linear-Bearing-U2056S-4.jpg" alt="">
+            <button>Continue Shopping</button> 
+            <button id="close-cart">Close</button>
+        </div>
+    </div>
+
+    <div class="search-bar" id="search-bar">
+        <input type="text" placeholder="Search...">
+        <button onclick="return validateSearch()">Search</button>
+        <button id="close-search">Close</button>
+    </div>
+
+        <nav class="navigation">
+            <a href="Home.html">HOME</a>
+            <a href="arrivals.html">NEW ARRIVALS</a>
+            <div class="dropdown">
+                <a href="shop.html">SHOP <i class="fa-solid fa-angle-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="wieghts.html">Wieghts</a>
+               <a href="machines.html">Machines</a>
+               <a href="clothes.html">Clothes</a>
+             <a href="suplements.html">Suplements</a>
+                </div>
+            </div>
+            <a href="about.html">ABOUT</a>
+        </nav>
+    </header>
+    <div class="Signup">
+        <form id="signupForm" onsubmit="CheckPassword(event)">
+            <h1>Sign up</h1>
+            <hr>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" placeholder="Enter First Name" name="FirstName" required>
+            
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" placeholder="Enter Last Name" name="LastName" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter Email" name="Email" required>
+
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter Username" name="Username" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter Password" name="Password" required>
+            
+            <label for="repeatPassword">Repeat Password</label>
+            <input type="password" id="repeatPassword" placeholder="Repeat Password" name="RepeatPassword" required> 
+            
+            <br><br>
+            
+            <label>
+                <input type="checkbox" name="remember" id="rememberMe"> Remember Me
+            </label>
+            
+            <p>By creating an account you agree to our <a href="D:\Web Development\project\HomeT.html">Terms and Privacy</a></p>
+            
+            <div class="buttons">
+                <button type="button" class="Cancelbtn" onclick="redirectToHome()">Cancel</button>
+                <button type="submit" class="signupbtn">Sign Up</button>
+            </div>
+        </form>
+    </div>
+    
+    *<!-- footer -->
+ <div class="footer">
+    <div>
+        <p class="footerinfo">Contact Info Name: POV<br>
+  Email: info@pov-worldwide.com<br>
+  Address: Cairo, Maadi, 40 City of Brothers for Police Officers, Floor 1, Apartment 12<br></p>
+    </div>
+    <div>
+        <h2 style="font-style: bold;">About</h2>
+        <p>عايز البطن شوكلاته<br> والصدر بلاطه<br> يبقي حلك عندنا<br>  !مع شد حيلك</p>    </div>
+    <div>
+        <h2 style="font-style: bold;">Quick Links</h2>
+        <ul>
+            <li><a class="link" href="#">Privacy Policy</a></li>
+            <li><a class="link" href="#">Terms of Service</a></li>
+            <li><a class="link" href="#">Refund & Exchange Policy</a></li>
+        </ul>
+    </div>
+ </div>
+
+</body>
+</html>
+</body>
+</html>
