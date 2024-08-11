@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/admin.css">
+    <title>Admin</title>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
+    <div class="sidebar">
+        <h2>شد حيلك</h2>
+        <ul>
+            <li><a href="https://<%= domainName %>/Home">Home Page</a></li>
+            <li><a href="https://<%= domainName %>/AdminU">User Management</a></li>
+            <li><a href="https://<%= domainName %>/AdminOrder">Order Management</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <h1>Product Management</h1>
+        <form action="/updateProduct/<%=obj._id%>?_method=PUT" method="post">
+            <div class="form-group">
+                <label for="product-name">Product Name</label>
+                <input value="<%= obj.name %>" type="text" id="product-name" name="name" required minlength="3" maxlength="100" placeholder="Product name">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" value="<%= obj.description %>" id="description" name="description" required minlength="20" placeholder="Product description"></input>
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                    <option value="Wieghts" <%= obj.category === 'Wieghts' ? 'selected' : '' %>>Wieghts</option>
+                    <option value="Machines" <%= obj.category === 'Machines' ? 'selected' : '' %>>Machines</option>
+                    <option value="Clothes" <%= obj.category === 'Clothes' ? 'selected' : '' %>>Clothes</option>
+                    <option value="Suplements" <%= obj.category === 'Suplements' ? 'selected' : '' %>>Suplements</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input value="<%= obj.price %>" type="number"  id="price" name="price" required min="0" max="200000000000" placeholder="Product price">
+            </div>
+            <div class="form-group">
+                <label for="stock">Stock Quantity</label>
+                <input value="<%= obj.quantity %>" type="number" id="stock" name="quantity" required min="0" placeholder="Quantity">
+            </div>
+            <div class="form-group">
+                <label for="images">Product Images</label>
+                <input value="<%= obj.images %>" type="file" id="images" name="images" multiple>
+            </div>
+            <div class="form-group">
+                <label for="ratingsAverage">Average Rating</label>
+                <input value="<%= obj.ratingsAverage %>" type="number" id="ratingsAverage" name="ratingsAverage" min="1" max="5" placeholder="Enter average rating">
+            </div>
+                        <button class="button" type="submit">Save</button>
+        </form>
+    </div>
+</body>
+</html>

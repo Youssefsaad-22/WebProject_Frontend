@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/admin.css">
+    <title>Admin</title>
+    <script src="/scripts/adminu.js"></script>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
+    <div class="sidebar">
+        <h2>شد حيلك</h2>
+        <ul>
+            <li><a href="/home">Home Page</a></li>
+            <li><a href="/adminu">User Management</a></li>
+            <li><a href="/adminorder">Order Management</a></li>
+        </ul>
+    </div>
+    
+    <div class="main">
+        <h1>User Management</h1>
+        <form action="/createUser" method="post">
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button class="button" type="submit">Save</button>
+        </form>
+        <table class="product-list">
+            <thead>
+                <tr>
+                    <th>firstname</th>
+                    <th>Email</th>
+                    <th>Last Update</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user => { %>
+                    <tr>
+                        <td><%= user.firstname %></td>
+                        <td><%= user.email %></td>
+                        <td><%= moment(user.updatedAt).format("MMM Do YY") %></td>
+                        <td>
+                            <a href="/adminuedit/<%= user._id %>"><button class="button">Edit</button></a>
+                            <form style="display: inline;" action="/deleteUser/<%= user._id %>" method="post">
+                                <button type="submit" class="button">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

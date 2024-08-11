@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/admin.css">
+    <title>Admin</title>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
+    <div class="sidebar">
+        <h2>شد حيلك</h2>
+        <ul>
+            <li><a href="/home">Home Page</a></li>
+            <li><a href="/adminu">User Management</a></li>
+            <li><a href="/adminorder">Order Management</a></li>
+        </ul>
+    </div>
+    
+    <div class="main">
+        <h1>User Management</h1>
+        <form action="/updateUser/<%= user._id %>?_method=PUT" method="post">
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input value="<%= user.firstname %>" type="text" id="firstname" name="firstname" required>
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input value="<%= user.lastname %>" type="text" id="lastname" name="lastname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input value="<%= user.email %>" type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input value="<%= user.password %>" type="password" id="password" name="password" required>
+            </div>
+            <button class="button" type="submit">Save</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/admin.css">
+    <title>Admin</title>
+    <script src="/scripts/admin.js"></script>
+    <!-- Include moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+</head>
+<body>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
+    <div class="sidebar">
+        <h2>شد حيلك</h2>
+        <ul>
+            <li><a href="/home">Home Page</a></li>
+            <li><a href="/adminu">User Management</a></li>
+            <li><a href="/adminorder">Order Management</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <h1>Product Management</h1>
+        <form action="/admin" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="product-name">Product Name</label>
+                <input type="text" id="product-name" name="name" required minlength="3" maxlength="100" placeholder="Product name">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" required minlength="20" placeholder="Product description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                    <option value="Weights">Weights</option>
+                    <option value="Machines">Machines</option>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Supplements">Supplements</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" id="price" name="price" required min="0" max="200000" placeholder="Product price">
+            </div>
+            <div class="form-group">
+                <label for="stock">Stock Quantity</label>
+                <input type="number" id="stock" name="quantity" required min="0" placeholder="Quantity">
+            </div>
+            <div class="form-group">
+                <label for="images">Product Images</label>
+                <input type="file" id="images" name="images" multiple>
+            </div>
+            <div class="form-group">
+                <label for="ratingsAverage">Average Rating</label>
+                <input type="number" id="ratingsAverage" name="ratingsAverage" min="1" max="5" placeholder="Enter average rating">
+            </div>
+            <button class="button" type="submit">Save</button>
+        </form>
+        <table class="product-list">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Average Rating</th>
+                    <th>Last Update</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% arr.forEach(item => { %>
+                    <tr>
+                        <td><%= item.name %></td>
+                        <td><%= item.category %></td>
+                        <td><%= item.price %></td>
+                        <td><%= item.quantity %></td>
+                        <td><%= item.ratingsAverage %></td>
+                        <td><%= item.formattedDate %></td>
+                        <td>
+                            <a href="/adminedit/<%= item._id %>"><button class="button">Edit</button></a>
+                            <form style="display: inline;" action="/deletee/<%= item._id %>?_method=DELETE" method="post">
+                                <button type="submit" class="button">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
