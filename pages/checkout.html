@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../styles/checkout.css">
+    <script src="../scripts/checkout.js"></script>
+    <title>POV</title>
+</head>
+<body>
+    <header>
+        <div class="strap">شيك علي الجديد</div>
+        <div class="logo">شد حيلك
+        <a href="D:\Web Development\project\html files\login.html"><i class="bi bi-person"></i></a>
+        <a href="#cart" class="cart-icon"><i class="bi bi-cart3"></i> </a>
+        <a href="#search" class="search-icon"><i class="bi bi-search"></i> </a>
+    </div>
+
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-content">
+            <img src="../images/Angled-Leg-Press-Linear-Bearing-U2056S-4.jpg" alt="">
+            <button>Continue Shopping</button> 
+            <button id="close-cart">Close</button>
+        </div>
+    </div>
+
+    <div class="search-bar" id="search-bar">
+        <input type="text" placeholder="Search...">
+        <button onclick="return validateSearch()">Search</button>
+        <button id="close-search">Close</button>
+    </div>
+
+        <nav class="navigation">
+            <a href="Home.html">HOME</a>
+            <a href="arrivals.html">NEW ARRIVALS</a>
+            <div class="dropdown">
+                <a href="shop.html">SHOP <i class="fa-solid fa-angle-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="wieghts.html">Wieghts</a>
+               <a href="machines.html">Machines</a>
+               <a href="clothes.html">Clothes</a>
+             <a href="suplements.html">Suplements</a>
+                </div>
+            </div>
+            <a href="about.html">ABOUT</a>
+        </nav>
+    </header>
+<!------------------------------------------------------------->
+
+<div class="checkout-container">
+    <h1 class="checkout-title">Checkout</h1>
+    
+    <form id="checkout-form" class="checkout-form" action="/checkout" method="POST">
+        <fieldset>
+            <legend>Billing Information</legend>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" value="<%= user.name %>" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" value="<%= user.email %>" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Shipping Address</label>
+                <input type="text" id="address" name="address" value="<%= user.address %>" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" value="<%= user.city %>" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" value="<%= user.state %>" required>
+            </div>
+            <div class="form-group">
+                <label for="zip">ZIP Code</label>
+                <input type="text" id="zip" name="zip" value="<%= user.zip %>" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" value="<%= user.phone %>" required>
+            </div>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Payment Information</legend>
+            
+            <div class="form-group">
+                <label>Payment Method</label>
+                <div class="payment-methods">
+                    <div class="payment-option">
+                        <input type="radio" id="visa" name="payment-method" value="visa" required>
+                        <label for="visa">Visa</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="cash" name="payment-method" value="cash" required>
+                        <label for="cash">Cash</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group card-info">
+                <label for="card-number">Card Number (Visa Only)</label>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456">
+                <span id="card-number-error" class="error-message"></span>
+            </div>
+            <div class="form-group card-info">
+                <label for="expiry-date">Expiry Date (Visa Only)</label>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY">
+                <span id="expiry-date-error" class="error-message"></span>
+            </div>
+            <div class="form-group card-info">
+                <label for="cvv">CVV (Visa Only)</label>
+                <input type="text" id="cvv" name="cvv">
+                <span id="cvv-error" class="error-message"></span>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-submit">Place Order</button>
+                <button type="button" class="btn-cancel" onclick="window.location.href='/cart'">Cancel</button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+
+
+
+
+
+
+<!-------------------------------------------------------------->
+     <!-- footer -->
+ <div class="footer">
+    <div>
+        <p class="footerinfo">Contact Info Name: POV<br>
+  Email: info@pov-worldwide.com<br>
+  Address: Cairo, Maadi, 40 City of Brothers for Police Officers, Floor 1, Apartment 12<br></p>
+    </div>
+    <div>
+        <h2 class="footerh2">About</h2>
+        <p>عايز البطن شوكلاته<br> والصدر بلاطه<br> يبقي حلك عندنا<br>  !مع شد حيلك</p>
+    </div>
+    <div>
+        <h2 class="footerh2">Quick Links</h2>
+        <ul>
+            <li><a href="HomeP.html">Privacy Policy</a></li>
+            <li><a href="HomeT.html">Terms of Service</a></li>
+            <li><a href="HomeR.html">Refund & Exchange Policy</a></li>
+        </ul>
+    </div>
+   </div>
+  
+</body>
+</html>

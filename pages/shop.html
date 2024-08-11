@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../styles/Shop.css">
     <title>Shop</title>
-    <script src="../scripts/nav.js"></script>
+    <script src="../scripts/shop.js"></script>
     <link rel="icon" type="image/png" href="../images/main.jpg">
 </head>
 <body>
@@ -21,11 +21,20 @@
 
     <div class="cart-panel" id="cart-panel">
         <div class="cart-content">
-            <img src="../images/Angled-Leg-Press-Linear-Bearing-U2056S-4.jpg" alt="">
-            <button>Continue Shopping</button> 
-            <button id="close-cart">Close</button>
+            <h3 id="product-name">Product Name</h3>
+            <img id="product-image" src="" alt="Product Image">
+            <p class="product-price" id="product-price">$00.00</p>
+            <i class="bi bi-trash delete-icon" id="delete-btn" style="cursor: pointer;"></i>
+            <button class="quantity-btn" id="decrease-qty">-</button>
+            <span class="quantity-number" id="quantity-number">1</span>
+            <button class="quantity-btn" id="increase-qty">+</button>
+            <button class="btn-primary" id="checkout-btn">Proceed to Checkout</button> 
+            <button class="btn-secondary" id="close-cart">Close</button>
+
         </div>
     </div>
+    
+    
 
     <div class="search-bar" id="search-bar">
         <input type="text" placeholder="Search...">
